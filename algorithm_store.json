@@ -1,0 +1,47 @@
+{
+  "name": "Demo - Average",
+  "partitioning": "horizontal",
+  "vantage6_version": "4.15",
+  "functions": [
+    {
+      "name": "central_average",
+      "databases": [
+        {
+          "name": "Database",
+          "description": "Database to use for the average computation"
+        }
+      ],
+      "ui_visualizations": [],
+      "arguments": [
+        {
+          "type": "column",
+          "description": "Column for which to compute the global average",
+          "name": "column_name"
+        }
+      ],
+      "description": "Compute the global average of a column across all participating organizations.",
+      "type": "central"
+    },
+    {
+      "name": "partial_average",
+      "databases": [
+        {
+          "name": "Database",
+          "description": "Database to use for the partial average computation"
+        }
+      ],
+      "ui_visualizations": [],
+      "arguments": [
+        {
+          "type": "column",
+          "description": "Column for which to compute the local sum and count",
+          "name": "column_name"
+        }
+      ],
+      "description": "Compute local sum and row count for a single organization.",
+      "type": "federated"
+    }
+  ],
+  "description": "Compute the average of a selected column in a federated way.",
+  "image": "ghcr.io/vantage6/algorithm/average"
+}
