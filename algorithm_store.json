@@ -43,5 +43,5 @@
     }
   ],
   "description": "Compute the average of a selected column in a federated way.",
-  "image": "ghcr.io/vantage6/algorithm/average"
+  "image": "ghcr.io/vantage6/algorithm/demo/average"
 }
