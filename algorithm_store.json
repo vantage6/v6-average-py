@@ -1,47 +1,59 @@
 {
   "name": "Demo - Average",
+  "image": "ghcr.io/vantage6/algorithm/demo/average",
+  "vantage6_version": "5.0.0",
+  "code_url": "https://github.com/vantage6/v6-average-py",
+  "documentation_url": "",
   "partitioning": "horizontal",
-  "vantage6_version": "4.15",
+  "description": "Compute the average of a selected column in a federated way.",
   "functions": [
     {
       "name": "central_average",
+      "display_name": "Central average",
+      "standalone": true,
+      "description": "Compute the global average of a column across all participating organizations.",
+      "step_type": "central_compute",
+      "ui_visualizations": [],
+      "arguments": [
+        {
+          "name": "column_name",
+          "display_name": "Column",
+          "description": "Column for which to compute the global average",
+          "type": "column",
+          "has_default_value": false,
+          "is_frontend_only": false
+        }
+      ],
       "databases": [
         {
           "name": "Database",
           "description": "Database to use for the average computation"
         }
-      ],
-      "ui_visualizations": [],
-      "arguments": [
-        {
-          "type": "column",
-          "description": "Column for which to compute the global average",
-          "name": "column_name"
-        }
-      ],
-      "description": "Compute the global average of a column across all participating organizations.",
-      "type": "central"
+      ]
     },
     {
       "name": "partial_average",
+      "display_name": "Partial average",
+      "standalone": true,
+      "description": "Compute local sum and row count for a single organization.",
+      "step_type": "federated_compute",
+      "ui_visualizations": [],
+      "arguments": [
+        {
+          "name": "column_name",
+          "display_name": "Column",
+          "description": "Column for which to compute the local sum and count",
+          "type": "column",
+          "has_default_value": false,
+          "is_frontend_only": false
+        }
+      ],
       "databases": [
         {
           "name": "Database",
           "description": "Database to use for the partial average computation"
         }
-      ],
-      "ui_visualizations": [],
-      "arguments": [
-        {
-          "type": "column",
-          "description": "Column for which to compute the local sum and count",
-          "name": "column_name"
-        }
-      ],
-      "description": "Compute local sum and row count for a single organization.",
-      "type": "federated"
+      ]
     }
-  ],
-  "description": "Compute the average of a selected column in a federated way.",
-  "image": "ghcr.io/vantage6/algorithm/demo/average"
+  ]
 }

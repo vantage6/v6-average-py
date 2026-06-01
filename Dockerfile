@@ -3,7 +3,7 @@
 # different image here (e.g. python:3). In that case it is important that
 # `vantage6-client` is a dependancy of you project as this contains the wrapper
 # we are using in this example.
-ARG BASE=4.15
+ARG BASE=5.0
 FROM ghcr.io/vantage6/infrastructure/algorithm-base:${BASE}
 
 # Change this to the package name of your project. This needs to be the same
@@ -12,7 +12,7 @@ ARG PKG_NAME="v6-average-py"
 
 # This will install your algorithm into this image.
 COPY . /app
-RUN pip install /app
+RUN uv pip install --system --prerelease=allow -e /app
 
 # This will run your algorithm when the Docker container is started. The
 # wrapper takes care of the IO handling (communication between node and

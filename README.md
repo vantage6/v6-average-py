@@ -8,10 +8,19 @@
 --------------------
 
 # v6-average-py
-This algoithm is part of the [vantage6](https://vantage6.ai) solution. Vantage6 allowes to execute computations on federated datasets.
+
+Demo algorithm that computes the federated average of a numeric column.
+
+## Build
+
+```bash
+make image
+```
 
 ## Read more
-This algorithm is part of the [documentation](https://docs.vantage6.ai/v/2.0.0/algorithm-development/create-new-algorithm).
+
+- [vantage6 documentation](https://docs.vantage6.ai/)
+- [Updating algorithms from v4 to v5](https://vantage6.ai/news/updating-your-algorithm-from-v4-to-v5/)
 
 ------------------------------------
 > [vantage6](https://vantage6.ai)
