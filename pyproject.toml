@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "v6-average-py"
-version = "1.0.0"
+version = "1.1.0"
 description = "vantage6 average"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
   "pandas",
-  "vantage6-algorithm-tools>=5.0.0rc4",
+  "vantage6-algorithm-tools>=5.0.1",
 ]
 authors = [
   { name = "Bart van Beusekom", email = "b.vanbeusekom@iknl.nl" },
@@ -32,6 +32,3 @@ packages = ["v6-average-py"]
 
 [dependency-groups]
 dev = []
-
-[tool.uv]
-prerelease = "allow"
